@@ -1,4 +1,6 @@
 import React from "react";
+import { Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Main extends React.Component {
   render() {
@@ -19,16 +21,30 @@ class Main extends React.Component {
           </ul>
 
           <div id="buttons">
-            <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border border-blue-700 hover:border-blue-500 rounded">
-              Button
-            </button>
-            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
-              Button
-            </button>
+            <a
+              class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border border-blue-700 hover:border-blue-500 rounded"
+              href="login"
+            >
+              Login
+            </a>
+            <a
+              class="bg-transparent hover:bg-blue-500 text-blue-700 font-bold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
+              href="register"
+            >
+              Register
+            </a>
           </div>
         </div>
       </>
     );
+  }
+
+  Register() {
+    return <Route to="/register" />;
+  }
+
+  Login() {
+    return <Link to="/login">Home</Link>;
   }
 }
 export default Main;
