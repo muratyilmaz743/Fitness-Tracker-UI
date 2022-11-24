@@ -12,7 +12,7 @@ body {
   height: 100vh;
   width: 100%;
 }
-
+/* Maing Page*/
 header {
   position: absolute;
   width: 100%;
@@ -51,4 +51,18 @@ header {
   left: 5rem; 
 }
 
+/* Login Page*/
 
+.loginPage {
+  background: url(assets/loginPageBG.jpg);
+  height: 100%;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+}
+
+.loginPage form {
+  margin-top: 150px;
+}
