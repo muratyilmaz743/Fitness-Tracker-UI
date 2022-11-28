@@ -7,10 +7,6 @@ class Main extends React.Component {
     return (
       <>
         <div className="landingPage">
-          <header className="bg-slate-300/20 flex justify-center ">
-            <strong className="align-middle inline text-5xl text-[#1746A2]">Fitness Tracker</strong>
-          </header>
-
           <div id="slogan">
             <ul>
               <li>
