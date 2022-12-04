@@ -6,6 +6,7 @@ import Main from "./pages/Main";
 import Stats from "./pages/Statistics";
 import TeacherList from "./pages/TeacherList";
 import Exercises from "./pages/Exercise";
+import Dashboard from "./pages/Dashboard";
 import "./index.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,6 +14,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
    integrity="sha512-MY2jfK3DBnVzdS2V8MXo5lRtr0mNRroUI9hoLVv2/yL3vrJTam3VzASuKQ96fLEpyYIT4a8o7YgtUs5lPjiLVQ=="
    crossorigin="anonymous"
    referrerpolicy="no-referrer"></script>
+
+  
 class MyElement extends React.Component {
   render() {
     return (
@@ -22,6 +25,7 @@ class MyElement extends React.Component {
           <Route path="/stats" element={<Stats />} />
           <Route path="/teacherList" element={<TeacherList />} />
           <Route path="/exercise" element={<Exercises />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Main />} />
         </Routes>

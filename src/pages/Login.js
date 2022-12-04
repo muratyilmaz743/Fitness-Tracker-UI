@@ -23,6 +23,7 @@ function Login() {
         localStorage.setItem("refreshKey", result.refreshToken);
         localStorage.setItem("currentUser", result.userId);
         localStorage.setItem("userName", username);
+        this.props.history.push('/dashboard')
       })
       .catch((err) => console.log(err));
   };
