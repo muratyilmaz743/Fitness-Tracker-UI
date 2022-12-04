@@ -37,19 +37,19 @@ header {
   height: 100%;
 }
 
-#slogan strong{
+#slogan strong {
   position: relative;
   font-size: 48px;
   top: 450px;
   left: 5rem;
 }
 
-#slogan #buttons{
+#slogan #buttons {
   position: relative;
   top: 500px;
   display: flex;
   justify-content: space-evenly;
-  left: 5rem; 
+  left: 5rem;
 }
 
 /* Login Page*/
@@ -74,4 +74,66 @@ header {
   bottom: 40px;
   width: 30rem;
   background-color: papayawhip;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px;
+  gap: 20px;
+
+  position: absolute;
+  width: 300px;
+  height: 350px;
+  left: 74px;
+  top: 412px;
+
+  background: #dceaff;
+  border-radius: 8px;
+}
+.attributes {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  position: absolute;
+  width: 805px;
+  height: 725px;
+  left: 530px;
+  top: 189px;
+  color: black;
+  background: #dceaff;
+  border-radius: 40px;
+}
+
+.attributeLabel {
+  padding-left: 172px;
+  padding-right: 485px;
+  background-color: #dceaff;
+}
+
+.calendarDays {
+  font-family: "Open Sans";
+  position: relative;
+  left: 180px;
+  top: 15px;
+  font-size: 32px;
+}
+
+.ratios {
+  position: relative;
+  left: 172px;
+  top: 150px;
+  font-size: 32px;
+}
+
+#attribute {
+  position: relative;
+  width: 210px;
+  list-style: none;
+
+  margin-bottom: 100px;
+  padding: 0 0 0 10px;
 }

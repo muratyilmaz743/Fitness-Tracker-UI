@@ -24,7 +24,7 @@ class Stats extends Component {
             <div id="statisticsPage">
               <section>
                 <div class="calendar">
-                  <Calendar onChange={this.daychanged}/>
+                  <Calendar onChange={this.daychanged} />
                 </div>
 
                 <div class="attributes" id="box">
