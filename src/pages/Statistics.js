@@ -21,16 +21,25 @@ class Stats extends Component {
       <>
         <html>
           <body>
+            <header>Fitness Tracker</header>
+
             <div id="statisticsPage">
               <section>
                 <div class="calendar">
                   <Calendar onChange={this.daychanged} />
                 </div>
 
-                <div class="attributes" id="box">
-                  <label>Weight: {this.state.weight}</label> <br />
+                <div class="attributes">
+                  <label class="calendarDays">Month/Day/Year</label>
                   <br />
-                  <label> Fat Rate: {this.state.fat}</label>
+                  <ul>
+                    <li id="attribute">
+                      <label class="ratios">Weight: {this.state.weight} </label>
+                    </li>
+                    <li id="attribute">
+                      <label class="ratios"> Fat Rate: {this.state.fat}</label>
+                    </li>
+                  </ul>
                 </div>
               </section>
             </div>
