@@ -6,14 +6,15 @@ class Stats extends Component {
   constructor() {
     super();
     this.state = {
+      date: "",
       weight: "",
       fat: "",
     };
     this.daychanged = this.daychanged.bind(this);
   }
 
-  daychanged() {
-    this.setState({ weight: "123", fat: "11" });
+  daychanged(day) {
+    this.setState({date: "", weight: "78", fat: "%11" });
   }
 
   render() {
@@ -24,7 +25,7 @@ class Stats extends Component {
             <div id="statisticsPage">
               <section>
                 <div class="calendar">
-                  <Calendar onChange={this.daychanged} />
+                  <Calendar onClickDay={() => this.daychanged(this)} />
                 </div>
 
                 <div class="attributes">
