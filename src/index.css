@@ -40,16 +40,16 @@ header {
 #slogan strong {
   position: relative;
   font-size: 48px;
-  top: 450px;
-  left: 5rem;
+  top: 220px;
+  left: 10rem;
 }
 
 #slogan #buttons {
   position: relative;
-  top: 500px;
+  top: 250px;
   display: flex;
   justify-content: space-evenly;
-  left: 5rem;
+  left: 10rem;
 }
 
 /* Login Page*/
