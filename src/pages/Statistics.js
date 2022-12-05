@@ -21,8 +21,6 @@ class Stats extends Component {
       <>
         <html>
           <body>
-            <header>Fitness Tracker</header>
-
             <div id="statisticsPage">
               <section>
                 <div class="calendar">
