@@ -10,12 +10,9 @@ import Teacher from "../Components/teacher";
 class TeacherList extends Component {
   constructor() {
 
-
-    let teachers = [];
-
     //console.log(
     //  GetAllTeachers().then((res) => res.json().then((result) => {
-    //    teachers.push(result);
+    //    this.state.teachers.push(result);
     //  }))
     //);
 
@@ -23,7 +20,7 @@ class TeacherList extends Component {
     this.state = {
       showModal: false,
       content: "",
-      murat: 'muratttt'
+      teachers : []
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
