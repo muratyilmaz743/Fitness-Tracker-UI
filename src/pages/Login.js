@@ -23,6 +23,7 @@ function Login() {
         localStorage.setItem("refreshKey", result.refreshToken);
         localStorage.setItem("currentUser", result.userId);
         localStorage.setItem("userName", username);
+        window.location.href  = '/dashboard'
       })
       .catch((err) => console.log(err));
   };
@@ -33,7 +34,6 @@ function Login() {
     setPassword("");
     console.log(localStorage);
 
-    window.location.href  = '/dashboard'
   };
   return (
     <>

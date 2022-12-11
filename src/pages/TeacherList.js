@@ -8,27 +8,45 @@ import Rating from "../Components/ratingStars";
 import Teacher from "../Components/teacher";
 
 class TeacherList extends Component {
+  state = {
+    showModal: false,
+    content: "asdf",
+    name: "",
+    email: "",
+    gender: "",
+    phone: "",
+    teachers: [],
+  };
+
   constructor() {
-
-    //console.log(
-    //  GetAllTeachers().then((res) => res.json().then((result) => {
-    //    this.state.teachers.push(result);
-    //  }))
-    //);
-
     super();
-    this.state = {
-      showModal: false,
-      content: "",
-      teachers : []
-    };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
+
+    GetAllTeachers().then((res) =>
+      res.json().then((result) => {
+        let teacher = [...this.state.teachers];
+        for (let i = 0; i < 20; i++) {
+          teacher.push(result[i]);
+        }
+        this.setState({ teachers: teacher });
+      })
+    );
   }
 
-  handleOpenModal(content) {
-    this.setState({ showModal: true, content: content });
+  addToList(element) {
+    this.setState({ teachers: this.teachers.concat(element) });
+  }
+
+  handleOpenModal(name, email, gender, rate) {
+    this.setState({
+      showModal: true,
+      name: name,
+      email: email,
+      gender: gender,
+      rate: rate
+    });
   }
 
   handleCloseModal() {
@@ -38,34 +56,66 @@ class TeacherList extends Component {
   render() {
     return (
       <>
-        <div className="container lg:mx-auto mt-8">
+        <div className="container mx-auto px-40">
           <strong className="text-2xl">
             Find the best teacher for yourself
           </strong>
 
-          <div id="teacherBox" className="box-border h-56 w-56 p-4 border-4 m-6">
-            <div class="mb-4">
+          <div class="grid grid-cols-4 gap-3 justify-items-center">
+            {this.state.teachers.map((teacher) => {
+              return (
+                <Teacher
+                  name={teacher.fullName}
+                  email={teacher.email}
+                  openModal={() =>
+                    this.handleOpenModal(
+                      teacher.fullName,
+                      teacher.emailAddress,
+                      teacher.sgender,
+                      teacher.star_rate,
+                    )
+                  }
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div>
+          <ReactModal className="Modal" isOpen={this.state.showModal}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="absolute top-0 right-0 h-16 w-16 cursor-pointer"
+              onClick={this.handleCloseModal}
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+
+            <div class="mb-4 h-28">
               <img
                 src="https://mdbootstrap.com//img/Photos/Square/1.jpg"
-                class="max-w-full h-28 rounded-full"
+                class="max-w-full h-64 rounded-full absolute left-24 top-14"
                 alt=""
               />
             </div>
-            <Rating />
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2" onClick={() => this.handleOpenModal('a')}>
-              Trainer Name
-            </button>
-          </div>
 
-          <Teacher name={this.state.murat} openModal={() => this.handleOpenModal(this.state.murat)}/>
-
-          <div>
-            <ReactModal className="Modal" isOpen={this.state.showModal}>
-              <TeacherDetail />
-              <span>{this.state.content}</span>
-              <button onClick={this.handleCloseModal}>Close</button>
-            </ReactModal>
-          </div>
+            <div className="personal-info absolute top-96 left-12 text-2xl">
+              <Rating rate={this.state.rate}/>
+              <i>{this.state.name}</i>
+              <div>
+                <a href={this.state.email}>Send email</a>
+              </div>
+              <div>{this.state.phone}</div>
+              <div>{this.state.gender}</div>
+            </div>
+          </ReactModal>
         </div>
       </>
     );

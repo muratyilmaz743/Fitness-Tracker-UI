@@ -1,7 +1,7 @@
 import React from "react";
 import Rating from "../Components/ratingStars";
 
-const Teacher = ({openModal, name}) => {
+const Teacher = ({openModal, name, email}) => {
 
     const handleOpenModal = () => {
         openModal();
@@ -21,7 +21,8 @@ const Teacher = ({openModal, name}) => {
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
           onClick={handleOpenModal}
         >
-          Murat
+          {name}
+          {email}
         </button>
       </div>
     </>
