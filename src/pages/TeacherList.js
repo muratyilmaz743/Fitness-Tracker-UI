@@ -1,7 +1,6 @@
 import { Component } from "react";
 import React from "react";
 import ReactModal from "react-modal";
-import TeacherDetail from "../Components/teacherDetailSidebar";
 import { GetAllTeachers } from "../services/teacherService";
 import Rating from "../Components/ratingStars";
 
