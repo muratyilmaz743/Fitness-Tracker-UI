@@ -86,40 +86,18 @@ header {
   position: absolute;
   width: 300px;
   height: 350px;
-  left: 74px;
+  left: 100px;
   top: 412px;
-
-  background: #dceaff;
-  border-radius: 8px;
 }
 .attributes {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 800;
-  font-size: 32px;
-  line-height: 44px;
   position: absolute;
   width: 805px;
   height: 725px;
   left: 530px;
-  top: 189px;
-  color: black;
-  background: #dceaff;
-  border-radius: 40px;
-}
-
-.attributeLabel {
-  padding-left: 172px;
-  padding-right: 485px;
-  background-color: #dceaff;
 }
 
 .calendarDays {
-  font-family: "Open Sans";
   position: relative;
-  left: 180px;
-  top: 15px;
-  font-size: 32px;
 }
 
 .ratios {
@@ -130,10 +108,6 @@ header {
 }
 
 #attribute {
-  position: relative;
   width: 210px;
-  list-style: none;
-
   margin-bottom: 100px;
-  padding: 0 0 0 10px;
 }
