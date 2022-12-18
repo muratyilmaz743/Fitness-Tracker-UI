@@ -11,6 +11,7 @@ import "./index.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/header";
+import Workouts from "./pages/Workouts";
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
   integrity="sha512-MY2jfK3DBnVzdS2V8MXo5lRtr0mNRroUI9hoLVv2/yL3vrJTam3VzASuKQ96fLEpyYIT4a8o7YgtUs5lPjiLVQ=="
@@ -28,6 +29,7 @@ class MyElement extends React.Component {
           <Route path="/stats" element={<Stats />} />
           <Route path="/teacherList" element={<TeacherList />} />
           <Route path="/exercise" element={<Exercises />} />
+          <Route path="/workoutTips" element={<Workouts />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Main />} />
