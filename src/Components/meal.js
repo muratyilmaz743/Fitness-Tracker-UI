@@ -5,7 +5,7 @@ function Meal({ url, name, svg, notes }) {
     <>
       <div
         id="teacherBox"
-        className="box-border h-56 w-56 p-4 border-4 m-6 rounded-xl min-w-[14rem]"
+        className="box-border h-56 w-56 p-4 border-4 border-black m-6 rounded-xl min-w-[14rem]"
       >
         <div class="mb-4 text-center h-full">
           <p class="bg-blue-200 text-black font-bold py-2 px-4 rounded-full mt-2">

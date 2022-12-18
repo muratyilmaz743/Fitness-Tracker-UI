@@ -55,24 +55,24 @@ class Exercises extends Component {
             </span>
             <div className="flex flex-row overflow-auto">
               <Workout
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Şınav"}
+                notes={"3 x 10, 45sn dinlenme ile"}
               />
               <Workout
                 name={"Bench Press"}
-                notes={"Do this and that before it."}
+                notes={"3 x 10, 45sn dinlenme ile"}
               />
               <Workout
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Incline Machine Press"}
+                notes={"4 x 10, 30sn dinlenme ile"}
               />
               <Workout
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Dumbell Pullover"}
+                notes={"4 x 6, 45 sn dinlenme ile"}
               />
               <Workout
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Dumbell Fly"}
+                notes={"4 x 10, 30sn dinlenme ile"}
               />
             </div>
           </div>
@@ -80,24 +80,24 @@ class Exercises extends Component {
             <span class="bg-clip-text text-2xl border-b-4 p-4">Meal Plan</span>
             <div className="flex flex-row overflow-auto">
               <Meal
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Kahvaltı"}
+                notes={"1 dilim az yağlı, az tuzlu peynir (Mümkünse ev yapımı 2 yemek kaşığı lor peyniri), 2 adet haşlanmış yumurta"}
               />
               <Meal
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Ara öğün"}
+                notes={"1 bardak yağsız süt ya da şekersiz bitki çayı, 2 adet ceviz içi"}
               />
               <Meal
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Öğle Yemeği"}
+                notes={"8-9 yemek kaşığı sebze yemeği, 3 yemek kaşığı yoğurt, 2 dilim tahıllı ekmek ya da 8 kaşık yağsız tuzsuz makarna veya pilav"}
               />
               <Meal
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Antrenman Öncesi"}
+                notes={"1 dilim tam tahıllı ekmek, 1 tatlı kaşığı şeker ilavesiz fıstık ezmesi, küçük boy bir yeşil elma"}
               />
               <Meal
-                name={"Bench Press"}
-                notes={"Do this and that before it."}
+                name={"Akşam Yemeği"}
+                notes={"1 porsiyon az yağlı köfte, et, tavuk ya da balık yemeği, 8-9 yemek kaşığı pilav ya da makarna, 1 kase yoğurt, bol salata"}
               />
             </div>
           </div>
