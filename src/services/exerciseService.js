@@ -1,7 +1,25 @@
-export const GetProgram = () => {
-    var request = fetch('http://localhost:8082/api/trainingProgram/getAll',  {
-        method: "GET", 
-      })
+const backendApiUrl = "http://localhost:8082/api/";
 
-    return request
-}
+export const GetProgram = () => {
+  var request = fetch(backendApiUrl + "trainingProgram/getAll", {
+    method: "GET",
+  });
+  return request;
+};
+
+export const GetExercise = (target) => {
+  const url = backendApiUrl + "fitnessMove/filter?target=" + target;
+
+  var request = fetch(url, {
+    method: "GET",
+  });
+  return request;
+};
+
+export const GetAllExercises = () => {
+  const url = backendApiUrl + "fitnessMove/getAll";
+  var request = fetch(url, {
+    method: "GET",
+  });
+  return request;
+};

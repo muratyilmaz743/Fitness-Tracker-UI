@@ -6,7 +6,7 @@ class Dashboard extends Component {
     return (
       <>
         <div id="dashboard" className="bg-[url('assets/dashboardBG.jpg')] h-screen bg-center bg-no-repeat bg-cover bg-bottom">
-          <div className="">
+          <div>
             <div class="grid grid-cols-3 gap-3 justify-items-center">
               <MenuItem
                 url={"/exercise"}
