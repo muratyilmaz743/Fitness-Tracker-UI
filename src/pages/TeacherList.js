@@ -10,6 +10,7 @@ class TeacherList extends Component {
   state = {
     showModal: false,
     content: "asdf",
+    imgUrl: "",
     name: "",
     email: "",
     gender: "",
@@ -38,9 +39,10 @@ class TeacherList extends Component {
     this.setState({ teachers: this.teachers.concat(element) });
   }
 
-  handleOpenModal(name, email, gender, rate) {
+  handleOpenModal(image, name, email, gender, rate) {
     this.setState({
       showModal: true,
+      imgUrl: image,
       name: name,
       email: email,
       gender: gender,
@@ -64,10 +66,12 @@ class TeacherList extends Component {
             {this.state.teachers.map((teacher) => {
               return (
                 <Teacher
+                  imgUrl={teacher.image}
                   name={teacher.fullName}
                   email={teacher.email}
                   openModal={() =>
                     this.handleOpenModal(
+                      teacher.image,
                       teacher.fullName,
                       teacher.emailAddress,
                       teacher.sgender,
@@ -99,7 +103,7 @@ class TeacherList extends Component {
 
             <div class="mb-4 h-28">
               <img
-                src="https://mdbootstrap.com//img/Photos/Square/1.jpg"
+                src={this.state.imgUrl}
                 class="max-w-full h-64 rounded-full absolute left-24 top-14"
                 alt=""
               />
