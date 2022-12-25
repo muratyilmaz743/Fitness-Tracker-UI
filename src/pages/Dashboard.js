@@ -1,13 +1,13 @@
 import { Component } from "react";
 import HeroSection from "../Components/heroSection";
-import Cards from "../Components/card";
+import Features from "../Components/features";
 class Dashboard extends Component {
   render() {
     return (
       <>
         <div>
           <HeroSection />
-          <Cards />
+          <Features />
         </div>
       </>
     );

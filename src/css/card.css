@@ -1,7 +1,16 @@
 .cards {
-  padding: 4rem;
+  padding: 2rem;
   background: #fff;
 }
+.features {
+  font-size: large;
+}
+.baslık {
+  color: #f7941e;
+  font-weight: 900;
+  font-size: 35px;
+}
+
 h1 {
   font-size: large;
 }
