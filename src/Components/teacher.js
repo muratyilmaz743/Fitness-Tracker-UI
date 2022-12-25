@@ -3,6 +3,8 @@ import Rating from "../Components/ratingStars";
 
 const Teacher = ({imgUrl, openModal, name, email, rate}) => {
 
+  var mailto = 'mailto:' + email;
+
     const handleOpenModal = () => {
         openModal();
     }
@@ -22,7 +24,7 @@ const Teacher = ({imgUrl, openModal, name, email, rate}) => {
           onClick={handleOpenModal}
         >
           {name}
-          {email}
+          <a href={mailto}>{email}</a>
         </button>
       </div>
     </>
