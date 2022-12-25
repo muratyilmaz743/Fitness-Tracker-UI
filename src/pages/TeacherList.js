@@ -5,6 +5,7 @@ import { GetAllTeachers } from "../services/teacherService";
 import Rating from "../Components/ratingStars";
 
 import Teacher from "../Components/teacher";
+import Footer from "../Components/footer";
 
 class TeacherList extends Component {
   state = {
@@ -46,7 +47,7 @@ class TeacherList extends Component {
       name: name,
       email: email,
       gender: gender,
-      rate: rate
+      rate: rate,
     });
   }
 
@@ -58,8 +59,8 @@ class TeacherList extends Component {
     return (
       <>
         <div className="container mx-auto px-40">
-          <strong className="text-2xl">
-            Find the best teacher for yourself
+          <strong className="text-2xl ">
+            Find the best tracker for yourself
           </strong>
 
           <div class="grid grid-cols-4 gap-3 justify-items-center">
@@ -75,7 +76,7 @@ class TeacherList extends Component {
                       teacher.fullName,
                       teacher.emailAddress,
                       teacher.sgender,
-                      teacher.star_rate,
+                      teacher.star_rate
                     )
                   }
                 />
@@ -110,7 +111,7 @@ class TeacherList extends Component {
             </div>
 
             <div className="personal-info absolute top-96 left-12 text-2xl">
-              <Rating rate={this.state.rate}/>
+              <Rating rate={this.state.rate} />
               <i>{this.state.name}</i>
               <div>
                 <a href={this.state.email}>Send email</a>
@@ -119,6 +120,7 @@ class TeacherList extends Component {
               <div>{this.state.gender}</div>
             </div>
           </ReactModal>
+          <Footer />
         </div>
       </>
     );
