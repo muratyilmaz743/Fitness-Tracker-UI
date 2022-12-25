@@ -4,6 +4,7 @@ import { PostWithoutAuth } from "../services/HttpService";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  this.isTracker = false;
   const handleUsername = (value) => {
     setUsername(value);
   };
@@ -23,7 +24,15 @@ function Login() {
         localStorage.setItem("refreshKey", result.refreshToken);
         localStorage.setItem("currentUser", result.userId);
         localStorage.setItem("userName", username);
-        window.location.href = "/exercise";
+        localStorage.setItem("role", "ROLE_TRACKER");
+
+        this.isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
+
+        if (this.isTracker) {
+          window.location.href = "/addPlan";
+        } else {
+          window.location.href = "/exercise";
+        }
       })
       .catch((err) => console.log(err));
   };
