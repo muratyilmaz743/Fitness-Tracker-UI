@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 import { Button } from "./button";
-import "./css/heroSection.css";
+import "../css/heroSection.css";
 import main from "../assets/woman_exercise_home.png";
 function HeroSection() {
   return (

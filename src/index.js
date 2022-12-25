@@ -36,7 +36,6 @@ class MyElement extends React.Component {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/" element={<Main />} />
-          <Route path="/aboutUs" element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
     );

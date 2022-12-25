@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/card.css";
+import "../css/card.css";
 import CardItem from "./cardItem";
 import image1 from "../assets/secure.jpg";
 function Cards() {
@@ -16,30 +16,6 @@ function Cards() {
               path="/services"
               text="Secure"
             />
-            {/* <CardItem
-              src="images/img-4.jpg"
-              //   
-              label="Adventure"
-              path="/products"
-            />
-            <CardItem
-              src="images/img-8.jpg"
-              //   text="Ride through the Sahara Desert on a guided camel tour"
-              label="Adrenaline"
-              path="/sign-up"
-            />
-            <CardItem
-              src="images/img-8.jpg"
-              //   text="Ride through the Sahara Desert on a guided camel tour"
-              label="Adrenaline"
-              path="/sign-up"
-            />
-            <CardItem
-              src="images/img-8.jpg"
-              //   text="Ride through the Sahara Desert on a guided camel tour"
-              label="Adrenaline"
-              path="/sign-up"
-            /> */}
           </ul>
         </div>
       </div>
