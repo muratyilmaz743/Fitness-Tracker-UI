@@ -8,13 +8,10 @@ import TeacherList from "./pages/TeacherList";
 import Exercises from "./pages/Exercise";
 import Dashboard from "./pages/Dashboard";
 import "./index.css";
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import Workouts from "./pages/Workouts";
-
 import Navbar from "./Components/navbar";
-import AboutUs from "./pages/AboutUs";
+
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
   integrity="sha512-MY2jfK3DBnVzdS2V8MXo5lRtr0mNRroUI9hoLVv2/yL3vrJTam3VzASuKQ96fLEpyYIT4a8o7YgtUs5lPjiLVQ=="

@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "./button";
 import { Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom'
 import "../css/navbar.css";
 import mainLogo from "../assets/14-removebg-preview.png";
 function Navbar() {
+  const location = useLocation();
+
+  var showButtons = location.pathname !== "/"
+
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+  const [setButton] = useState(true);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -36,6 +41,7 @@ function Navbar() {
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
+          {showButtons === true &&
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             <li className="nav-item">
               <Link to="/" className="nav-links" onClick={closeMobileMenu}>
@@ -60,18 +66,8 @@ function Navbar() {
                 Trackers
               </Link>
             </li>
-
-            <li>
-              <Link
-                to="/sign-up"
-                className="nav-links-mobile"
-                onClick={closeMobileMenu}
-              >
-                Sign Up
-              </Link>
-            </li>
           </ul>
-          {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+          }
         </div>
       </nav>
     </>
