@@ -14,7 +14,7 @@ class Stats extends Component {
   }
 
   daychanged(day) {
-    this.setState({date: "", weight: "78", fat: "%11" });
+    this.setState({date: "", weight: "82 KG", fat: "%14" });
   }
 
   render() {
@@ -27,19 +27,19 @@ class Stats extends Component {
         <html>
           <body>
             <div id="statisticsPage">
-              <section className="">
-                <div class="calendar">
+              <section>
+                <div class="calendar ml-36 mt-48 rounded-l-3xl bg-gradient-to-r from-[#86A8E7] to-[#4e8397]">
                   <Calendar onClickDay={() => this.daychanged(this)} />
                 </div>
 
-                <div class="attributes mt-20 container-md h-screen bg-gradient-to-r from-cyan-50 to-blue-50 rounded-3xl text-center">
-                  <span class="calendarDays text-5xl text-center top-16 text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 font-bold">{date}</span>
-                  <ul className="absolute top-1/4">
+                <div class="attributes ml-12 mt-24 h-[30rem] container-md bg-gradient-to-r from-[#4e8397] to-[#344a53] rounded-3xl text-center">
+                  <span class="calendarDays text-5xl text-center top-16 text-transparent bg-clip-text bg-gradient-to-r to-emerald-200 from-sky-200 font-bold">{date}</span>
+                  <ul className="absolute top-1/6">
                     <li id="attribute" >
-                      <label class="ratios">Weight: {this.state.weight} </label>
+                      <label class="ratios"><span className="text-2xl text-[#d5cabd] underline">Weight:</span> <br/><p className="font-bold text-5xl pt-4 ml-80 mt-36 fixed text-[#d9f2fd]"> {this.state.weight}</p></label>
                     </li>
                     <li id="attribute">
-                      <label class="ratios"> Fat Rate: {this.state.fat}</label>
+                      <label class="ratios  mt-4"><span className="text-2xl text-[#d5cabd] underline"> Fat Rate:</span> <br/> <p className="font-bold text-5xl pt-4 ml-80 mt-36 fixed text-[#d9f2fd]">{this.state.fat}</p></label>
                     </li>
                   </ul>
                 </div>

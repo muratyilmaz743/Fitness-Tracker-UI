@@ -81,19 +81,14 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 16px;
-  gap: 20px;
-
+  padding: 12px;
   position: absolute;
-  width: 300px;
-  height: 350px;
-  left: 100px;
-  top: 412px;
+  width: 21vw;
+  left: 8vw;
 }
 .attributes {
   position: absolute;
   width: 805px;
-  height: 725px;
   left: 530px;
 }
 
@@ -111,4 +106,8 @@ header {
 #attribute {
   width: 210px;
   margin-bottom: 100px;
+}
+
+.react-calendar {
+  border-radius: 1.5rem 0% 0% 1.5rem;
 }

@@ -17,7 +17,7 @@ function Navbar() {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <img src={mainLogo} alt="Fitness Tracker" width={190} />
+          <a href="/"><img src={mainLogo} alt="Fitness Tracker" width={190} /></a>
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             <i class="fab fa-typo3" />
           </Link>
