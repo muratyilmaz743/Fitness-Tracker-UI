@@ -23,7 +23,7 @@ function Login() {
         localStorage.setItem("refreshKey", result.refreshToken);
         localStorage.setItem("currentUser", result.userId);
         localStorage.setItem("userName", username);
-        window.location.href  = '/dashboard'
+        window.location.href = "/exercise";
       })
       .catch((err) => console.log(err));
   };
@@ -33,7 +33,6 @@ function Login() {
     setUsername("");
     setPassword("");
     console.log(localStorage);
-
   };
   return (
     <>
@@ -155,7 +154,8 @@ function Login() {
                     <button
                       href="/register"
                       class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
-                      onClick= {() => handleButton("register")}>
+                      onClick={() => handleButton("register")}
+                    >
                       Register
                     </button>
                   </p>
