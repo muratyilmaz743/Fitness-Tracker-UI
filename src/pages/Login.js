@@ -4,7 +4,7 @@ import { PostWithoutAuth } from "../services/HttpService";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  this.isTracker = false;
+  const isTracker = false;
   const handleUsername = (value) => {
     setUsername(value);
   };
@@ -26,9 +26,9 @@ function Login() {
         localStorage.setItem("userName", username);
         localStorage.setItem("role", "ROLE_TRACKER");
 
-        this.isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
+        isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
 
-        if (this.isTracker) {
+        if (isTracker) {
           window.location.href = "/addPlan";
         } else {
           window.location.href = "/exercise";

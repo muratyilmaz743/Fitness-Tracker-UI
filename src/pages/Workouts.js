@@ -92,7 +92,7 @@ class Workouts extends Component {
               {this.state.workoutList.map((workout) => {
                 return (
                   <>
-                    <WorkoutDisplay name={workout.name} url={workout.gifUrl} isTracker={this.isTracker}/>
+                    <WorkoutDisplay name={workout.name} url={workout.gifUrl} isTracker={true}/>
                   </>
                 );
               })}
