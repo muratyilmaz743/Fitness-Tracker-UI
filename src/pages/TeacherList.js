@@ -17,6 +17,7 @@ class TeacherList extends Component {
     gender: "",
     phone: "",
     teachers: [],
+    mailTo: "",
   };
 
   constructor() {
@@ -48,6 +49,7 @@ class TeacherList extends Component {
       email: email,
       gender: gender,
       rate: rate,
+      mailTo: "mailto:" + email,
     });
   }
 
@@ -114,7 +116,7 @@ class TeacherList extends Component {
               <Rating rate={this.state.rate} />
               <i>{this.state.name}</i>
               <div>
-                <a href={this.state.email}>Send email</a>
+                <a href={this.state.mailTo}>{this.state.email}</a>
               </div>
               <div>{this.state.phone}</div>
               <div>{this.state.gender}</div>

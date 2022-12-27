@@ -8,7 +8,7 @@ function HeroSection() {
     <div>
       <div className="hero-container">
         <img src={main} className="asd" alt="dsfsdf"></img>
-        {/* <video src="/videos/video-1.mp4" autoPlay loop muted /> */}
+
         <h4>YOUR FITNESS TRACKER IS HERE</h4>
         <p>What are you waiting for?</p>
         <div className="hero-btns">
