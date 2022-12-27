@@ -36,10 +36,10 @@ class Stats extends Component {
                   <span class="calendarDays text-5xl text-center top-16 text-transparent bg-clip-text bg-gradient-to-r to-emerald-200 from-sky-200 font-bold">{date}</span>
                   <ul className="absolute top-1/6">
                     <li id="attribute" >
-                      <label class="ratios"><span className="text-2xl text-[#d5cabd] underline">Weight:</span> <br/><p className="font-bold text-5xl pt-4 ml-80 mt-36 fixed text-[#d9f2fd]"> {this.state.weight}</p></label>
+                      <label class="ratios"><span className="text-2xl text-[#d5cabd] underline">Weight:</span> <br/><p className="font-bold text-5xl ml-80 fixed text-[#d9f2fd]"> {this.state.weight}</p></label>
                     </li>
                     <li id="attribute">
-                      <label class="ratios  mt-4"><span className="text-2xl text-[#d5cabd] underline"> Fat Rate:</span> <br/> <p className="font-bold text-5xl pt-4 ml-80 mt-36 fixed text-[#d9f2fd]">{this.state.fat}</p></label>
+                      <label class="ratios  mt-4"><span className="text-2xl text-[#d5cabd] underline"> Fat Rate:</span> <br/> <p className="font-bold text-5xl ml-80 fixed text-[#d9f2fd]">{this.state.fat}</p></label>
                     </li>
                   </ul>
                 </div>

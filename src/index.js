@@ -7,6 +7,7 @@ import Stats from "./pages/Statistics";
 import TeacherList from "./pages/TeacherList";
 import Exercises from "./pages/Exercise";
 import Dashboard from "./pages/Dashboard";
+import AddPlan from "./pages/AddPlan";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Workouts from "./pages/Workouts";
@@ -33,6 +34,7 @@ class MyElement extends React.Component {
           <Route path="/workoutTips" element={<Workouts />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/addPlan" element={<AddPlan />} />
           <Route path="/" element={<Main />} />
         </Routes>
       </BrowserRouter>

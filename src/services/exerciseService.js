@@ -23,3 +23,7 @@ export const GetAllExercises = () => {
   });
   return request;
 };
+
+export const AddExercise = (exerciseId) => {
+  console.log(exerciseId)
+}
