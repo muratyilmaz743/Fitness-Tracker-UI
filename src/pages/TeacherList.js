@@ -113,13 +113,21 @@ class TeacherList extends Component {
             </div>
 
             <div className="personal-info absolute top-96 left-12 text-2xl">
+              Tracker Informations <br></br>
+              Rate:
               <Rating rate={this.state.rate} />
-              <i>{this.state.name}</i>
+              <i> Name: {this.state.name}</i>
               <div>
-                <a href={this.state.mailTo}>{this.state.email}</a>
+                <a href={this.state.mailTo}>
+                  <button
+                    class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                    type="button"
+                  >
+                    Send Mail
+                  </button>
+                </a>
               </div>
               <div>{this.state.phone}</div>
-              <div>{this.state.gender}</div>
             </div>
           </ReactModal>
           <Footer />

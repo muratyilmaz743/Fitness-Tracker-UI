@@ -34,12 +34,7 @@ function Message() {
           </h1>
           <p class="mt-3">Email us at help@domain.com or message us here:</p>
 
-          <form
-            action="https://api.web3forms.com/submit"
-            class="mt-10"
-            onSubmit={handleSubmit}
-            ref={form}
-          >
+          <form class="mt-10" onSubmit={handleSubmit} ref={form}>
             <div class="grid gap-6 sm:grid-cols-2">
               <div class="relative z-0">
                 <input

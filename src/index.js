@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Workouts from "./pages/Workouts";
 import Navbar from "./Components/navbar";
 import Career from "./pages/Career";
+
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
   integrity="sha512-MY2jfK3DBnVzdS2V8MXo5lRtr0mNRroUI9hoLVv2/yL3vrJTam3VzASuKQ96fLEpyYIT4a8o7YgtUs5lPjiLVQ=="
@@ -28,6 +29,7 @@ class MyElement extends React.Component {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/stats" element={<Stats />} />
+
           <Route path="/career" element={<Career />} />
           <Route path="/teacherList" element={<TeacherList />} />
           <Route path="/exercise" element={<Exercises />} />
