@@ -5,7 +5,7 @@ export default function userDetail() {
   return (
     <div className="w-full h-screen flex justify-center items-center style-form-wrapper">
       <form>
-      <h1 className="text-5xl py-2">Hadi Tanışalım</h1>
+        <h1 className="text-5xl py-2">Hadi Tanışalım</h1>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
@@ -50,7 +50,7 @@ export default function userDetail() {
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-password"
-              type="password"
+              type="tel"
               placeholder="5859874515"
             />
             <p className="text-gray-600 text-xs italic">
@@ -215,6 +215,12 @@ export default function userDetail() {
                 </svg>
               </div>
             </div>
+            <button
+              type="submit"
+              class="mt-5 rounded-md bg-black px-10 py-2 text-white"
+            >
+              Send Message
+            </button>
           </div>
 
           {/* <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
