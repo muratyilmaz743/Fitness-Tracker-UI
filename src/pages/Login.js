@@ -4,7 +4,7 @@ import { PostWithoutAuth } from "../services/HttpService";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const isTracker = false;
+  let isTracker = false;
   const handleUsername = (value) => {
     setUsername(value);
   };
@@ -26,7 +26,7 @@ function Login() {
         localStorage.setItem("userName", username);
         localStorage.setItem("role", result.userRole);
 
-        isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
+        isTracker = localStorage.getItem("role");
 
         if (isTracker) {
           window.location.href = "/addPlan";
