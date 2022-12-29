@@ -1,0 +1,10 @@
+.style-form-wrapper form{
+    margin-bottom: 20vh;
+}
+
+@media (max-width: 640px) {
+    .style-form-wrapper > form {
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+}
