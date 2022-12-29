@@ -1,5 +1,24 @@
 import React from "react";
 import "../css/userRegister.css";
+import { setUserDetails } from "../services/userService";
+
+function setUser() {
+  setUserDetails({
+    gender: parseInt(document.getElementById('grid-gender').value),
+    age: 21,
+    height: parseInt(document.getElementById('grid-height').value),
+    weight: parseInt(document.getElementById('grid-Weight').value),
+    bodyMassIndex: null,
+    neckGirth: parseInt(document.getElementById('grid-Neck').value),
+    hipCircumference: parseInt(document.getElementById('grid-Hip').value),
+    Garth: parseInt(document.getElementById('grid-Garth').value),
+    isSmoke: parseInt(document.getElementById('grid-Smoke').value),
+    sportDescription: "No",
+    basalMetabolism: null,
+    target: document.getElementById('grid-Target').value,
+    client: { id: localStorage.getItem('currentUser') },
+  });
+}
 
 export default function userDetail() {
   return (
@@ -62,17 +81,17 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-state"
+              for="grid-gender"
             >
               Gender
             </label>
             <div className="relative">
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+                id="grid-gender"
               >
-                <option>Female</option>
-                <option>Male</option>
+                <option value="1">Female</option>
+                <option value="0">Male</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -88,13 +107,13 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-city"
+              for="grid-Weight"
             >
               Weight
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-city"
+              id="grid-Weight"
               type="text"
               placeholder="95"
             />
@@ -103,13 +122,13 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-zip"
+              for="grid-height"
             >
               Height
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-zip"
+              id="grid-height"
               type="text"
               placeholder="180"
             />
@@ -120,13 +139,13 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-city"
+              for="grid-Hip"
             >
               Hip Circumference
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-city"
+              id="grid-Hip"
               type="text"
               placeholder="95"
             />
@@ -134,13 +153,13 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-city"
+              for="grid-Neck"
             >
               Neck Girth
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-city"
+              id="grid-Neck"
               type="text"
               placeholder="95"
             />
@@ -149,13 +168,13 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-zip"
+              for="grid-Garth"
             >
               Garth
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-zip"
+              id="grid-Garth"
               type="text"
               placeholder="180"
             />
@@ -166,17 +185,17 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-state"
+              for="grid-Smoke"
             >
-              Are you smoke ?
+              Do you smoke ?
             </label>
             <div className="relative">
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+                id="grid-Smoke"
               >
-                <option>No</option>
-                <option>Yes</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -192,18 +211,18 @@ export default function userDetail() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-state"
+              for="grid-Target"
             >
               Target
             </label>
             <div className="relative">
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-state"
+                id="grid-Target"
               >
-                <option>Lose Weight</option>
-                <option>Gain Weight</option>
-                <option>Gain Muscle</option>
+                <option value="LOSEWEIGHT">Lose Weight</option>
+                <option value="GAINWEIGHT">Gain Weight</option>
+                <option value="GAINMUSCLE">Gain Muscle</option>
               </select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
@@ -216,8 +235,9 @@ export default function userDetail() {
               </div>
             </div>
             <button
-              type="submit"
+              type="button"
               class="mt-5 rounded-md bg-black px-10 py-2 text-white"
+              onClick={setUser}
             >
               Send Message
             </button>
