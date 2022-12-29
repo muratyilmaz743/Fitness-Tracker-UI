@@ -24,7 +24,7 @@ function Login() {
         localStorage.setItem("refreshKey", result.refreshToken);
         localStorage.setItem("currentUser", result.userId);
         localStorage.setItem("userName", username);
-        localStorage.setItem("role", "ROLE_TRACKER");
+        localStorage.setItem("role", result.userRole);
 
         isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
 
