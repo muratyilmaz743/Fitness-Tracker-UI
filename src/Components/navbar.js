@@ -4,12 +4,12 @@ import { useLocation } from "react-router-dom";
 import "../css/navbar.css";
 import mainLogo from "../assets/14-removebg-preview.png";
 import userIcon from "../assets/userIcom.png";
+import { PostWithoutAuth } from "../services/HttpService";
+
 function Navbar() {
   const location = useLocation();
 
   var showButtons = location.pathname !== "/";
-
-  const logoutUrl = "/refresh";
 
   const [click, setClick] = useState(false);
 
@@ -19,13 +19,11 @@ function Navbar() {
   const logout = () => {
     const refreshToken = localStorage.getItem("refreshKey");
     const userId = localStorage.getItem("currentUser");
-    fetch("/auth/refresh", {
-      method: "POST",
-      headers: {
-        userId: userId,
-        refreshToken: refreshToken,
-      },
-    });
+    
+    PostWithoutAuth("/auth/refresh", {
+      userId: userId,
+      refreshToken: refreshToken,
+    })
   };
 
   return (
