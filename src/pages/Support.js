@@ -1,11 +1,11 @@
 import React from "react";
 import Footer from "../Components/footer";
-import Messages from "../Components/Message";
+import Supports from "../Components/Support";
 
-export default function Career() {
+export default function Support() {
   return (
     <div>
-      <Messages />
+      <Supports />
       <Footer />
     </div>
   );

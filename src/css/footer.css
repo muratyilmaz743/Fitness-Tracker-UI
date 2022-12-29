@@ -66,11 +66,11 @@
   box-sizing: border-box;
 }
 
-.footer-link-items h2 {
+.footer-link-items h1 {
   margin-bottom: 16px;
 }
 
-.footer-link-items > h2 {
+.footer-link-items > h1 {
   color: #fff;
 }
 
@@ -85,7 +85,7 @@
   transition: 0.3s ease-out;
 }
 
-.footer-email-form h2 {
+.footer-email-form h1 {
   margin-bottom: 2rem;
 }
 

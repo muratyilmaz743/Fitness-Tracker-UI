@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import emailjs, { init } from "@emailjs/browser";
 
-function Message() {
+function Support() {
   init("user_xxxxxxxxxxxxxxxxxxx");
   const form = useRef();
 
@@ -10,7 +10,7 @@ function Message() {
     emailjs
       .sendForm(
         "service_nmrlf3c",
-        "template_vdy00bo",
+        "template_zwliw2a",
         form.current,
         "iuvpLinsEwIbgJjxO"
       )
@@ -28,10 +28,7 @@ function Message() {
     <div>
       <div class="flex min-h-screen items-center justify-start bg-white">
         <div class="mx-auto w-full max-w-lg">
-          <h1 class="text-4xl font-medium">
-            If you want to be a tracker <br></br>
-            CONTACT US
-          </h1>
+          <h1 class="text-4xl font-medium">SUPPORT</h1>
           <p class="mt-3">
             Email us at trackerfitness6@gmail.com or message us here:
           </p>
@@ -85,4 +82,4 @@ function Message() {
   );
 }
 
-export default Message;
+export default Support;

@@ -14,6 +14,7 @@ import Workouts from "./pages/Workouts";
 import Navbar from "./Components/navbar";
 import Career from "./pages/Career";
 import UserDetail from "./pages/UserDetail";
+import Support from "./pages/Support";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -32,12 +33,14 @@ class MyElement extends React.Component {
           <Route path="/stats" element={<Stats />} />
           <Route path="/userDetail" element={<UserDetail />} />
           <Route path="/career" element={<Career />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/teacherList" element={<TeacherList />} />
           <Route path="/exercise" element={<Exercises />} />
           <Route path="/workoutTips" element={<Workouts />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/addPlan" element={<AddPlan />} />
+
           <Route path="/" element={<Main />} />
         </Routes>
       </BrowserRouter>
