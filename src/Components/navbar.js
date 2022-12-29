@@ -9,7 +9,7 @@ function Navbar() {
 
   var showButtons = location.pathname !== "/";
 
-  const logoutUrl = "/refresh"
+  const logoutUrl = "/refresh";
 
   const [click, setClick] = useState(false);
 
@@ -17,17 +17,16 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const logout = () => {
-    const refreshToken = localStorage.getItem('refreshToken')
-    const userId = localStorage.getItem('currentUser')
-    fetch('/auth/refresh', {
-    method: 'POST',
-    headers: {
-        'userId': userId,
-        'refreshToken': refreshToken
-    }
-  })
-
-  }
+    const refreshToken = localStorage.getItem("refreshToken");
+    const userId = localStorage.getItem("currentUser");
+    fetch("/auth/refresh", {
+      method: "POST",
+      headers: {
+        userId: userId,
+        refreshToken: refreshToken,
+      },
+    });
+  };
 
   return (
     <>
@@ -86,7 +85,6 @@ function Navbar() {
             )}
             <li className="nav-item">
               <button
-                to={logoutUrl}
                 className="nav-links"
                 style={{ color: "red" }}
                 onClick={logout}
