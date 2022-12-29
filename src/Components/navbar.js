@@ -24,9 +24,8 @@ function Navbar() {
     headers: {
         'userId': userId,
         'refreshToken': refreshToken
-    },
-    body: JSON.stringify({ "id": 78912 })
-})
+    }
+  })
 
   }
 
