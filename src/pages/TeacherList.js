@@ -18,6 +18,7 @@ class TeacherList extends Component {
     phone: "",
     teachers: [],
     mailTo: "",
+    experienceYear: "",
   };
 
   constructor() {
@@ -41,7 +42,7 @@ class TeacherList extends Component {
     this.setState({ teachers: this.teachers.concat(element) });
   }
 
-  handleOpenModal(image, name, email, gender, rate) {
+  handleOpenModal(image, name, email, gender, rate, experienceYear) {
     this.setState({
       showModal: true,
       imgUrl: image,
@@ -50,6 +51,7 @@ class TeacherList extends Component {
       gender: gender,
       rate: rate,
       mailTo: "mailto:" + email,
+      experienceYear: experienceYear,
     });
   }
 
@@ -117,6 +119,7 @@ class TeacherList extends Component {
               Rate:
               <Rating rate={this.state.rate} />
               <i> Name: {this.state.name}</i>
+              <div>Experience Year: {this.state.experienceYear}</div>
               <div>
                 <a href={this.state.mailTo}>
                   <button

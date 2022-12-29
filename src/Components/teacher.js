@@ -1,13 +1,12 @@
 import React from "react";
 import Rating from "../Components/ratingStars";
 
-const Teacher = ({imgUrl, openModal, name, email, rate}) => {
+const Teacher = ({ imgUrl, openModal, name, email, rate, experienceYear }) => {
+  var mailto = "mailto:" + email;
 
-  var mailto = 'mailto:' + email;
-
-    const handleOpenModal = () => {
-        openModal();
-    }
+  const handleOpenModal = () => {
+    openModal();
+  };
   return (
     <>
       <div id="teacherBox" className="box-border h-56 w-56 p-4 border-4 m-6">
@@ -18,18 +17,18 @@ const Teacher = ({imgUrl, openModal, name, email, rate}) => {
             alt="teacher"
           />
         </div>
-        <Rating rate={rate}/>
+        <Rating rate={rate} />
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
           onClick={handleOpenModal}
         >
           {name}
+          {experienceYear}
           <a href={mailto}>{email}</a>
         </button>
       </div>
     </>
   );
-}
-
+};
 
 export default Teacher;

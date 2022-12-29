@@ -12,7 +12,7 @@ class Workouts extends Component {
   constructor() {
     super();
     this.isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
-    console.log(this.isTracker)
+    console.log(this.isTracker);
 
     GetAllExercises().then((res) =>
       res.json().then((result) => {
@@ -92,7 +92,11 @@ class Workouts extends Component {
               {this.state.workoutList.map((workout) => {
                 return (
                   <>
-                    <WorkoutDisplay name={workout.name} url={workout.gifUrl} isTracker={true}/>
+                    <WorkoutDisplay
+                      name={workout.name}
+                      url={workout.gifUrl}
+                      isTracker={true}
+                    />
                   </>
                 );
               })}

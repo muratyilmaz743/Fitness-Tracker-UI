@@ -13,6 +13,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Workouts from "./pages/Workouts";
 import Navbar from "./Components/navbar";
 import Career from "./pages/Career";
+import UserDetail from "./pages/UserDetail";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -29,7 +30,7 @@ class MyElement extends React.Component {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/stats" element={<Stats />} />
-
+          <Route path="/userDetail" element={<UserDetail />} />
           <Route path="/career" element={<Career />} />
           <Route path="/teacherList" element={<TeacherList />} />
           <Route path="/exercise" element={<Exercises />} />

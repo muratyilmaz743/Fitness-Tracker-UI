@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import "../css/navbar.css";
 import mainLogo from "../assets/14-removebg-preview.png";
+import userIcon from "../assets/userIcom.png";
 function Navbar() {
   const location = useLocation();
 
   var showButtons = location.pathname !== "/";
 
-  const refreshToken = localStorage.getItem("refreshKey")
-  const logoutUrl = "/refresh" + refreshToken
+  const refreshToken = localStorage.getItem("refreshKey");
+  const logoutUrl = "/refresh" + refreshToken;
 
   const [click, setClick] = useState(false);
 
@@ -72,15 +73,20 @@ function Navbar() {
               </>
             )}
             <li className="nav-item">
-                  <Link
-                    to={logoutUrl}
-                    className="nav-links"
-                    style={{color: "red"}}
-                    onClick={closeMobileMenu}
-                  >
-                    Logout
-                  </Link>
-                </li>
+              <Link
+                to={logoutUrl}
+                className="nav-links"
+                style={{ color: "red" }}
+                onClick={closeMobileMenu}
+              >
+                Logout
+              </Link>
+            </li>
+            <li className="nav-item userIcon">
+              <a>
+                <img src={userIcon} alt="Fitness Tracker" width={40} />
+              </a>
+            </li>
           </ul>
         </div>
       </nav>

@@ -40,7 +40,7 @@
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(8, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
@@ -50,9 +50,11 @@
 }
 
 .nav-item {
-  height: 80px;
+  height: 40px;
 }
-
+.userIcon {
+  align-items: flex-end;
+}
 .nav-links {
   color: black;
   display: flex;
