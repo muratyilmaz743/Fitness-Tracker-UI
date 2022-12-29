@@ -17,7 +17,7 @@ function Navbar() {
   const closeMobileMenu = () => setClick(false);
 
   const logout = () => {
-    const refreshToken = localStorage.getItem("refreshToken");
+    const refreshToken = localStorage.getItem("refreshKey");
     const userId = localStorage.getItem("currentUser");
     fetch("/auth/refresh", {
       method: "POST",
