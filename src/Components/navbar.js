@@ -5,6 +5,7 @@ import "../css/navbar.css";
 import mainLogo from "../assets/14-removebg-preview.png";
 import userIcon from "../assets/userIcom.png";
 import { PostWithoutAuth } from "../services/HttpService";
+import { ChangeTrackerActivity } from "../services/HttpService";
 
 function Navbar() {
   const location = useLocation();
@@ -12,18 +13,21 @@ function Navbar() {
   var showButtons = location.pathname !== "/";
 
   const [click, setClick] = useState(false);
-
+  const userId = localStorage.getItem("currentUser");
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
 
   const logout = () => {
     const refreshToken = localStorage.getItem("refreshKey");
-    const userId = localStorage.getItem("currentUser");
-    
+
     PostWithoutAuth("/auth/refresh", {
       userId: userId,
       refreshToken: refreshToken,
-    })
+    });
+  };
+
+  const changeTrackerActivty = () => {
+    ChangeTrackerActivity(userId);
   };
 
   return (
@@ -94,6 +98,12 @@ function Navbar() {
               <a>
                 <img src={userIcon} alt="Fitness Tracker" width={40} />
               </a>
+            </li>
+            <li className="nav-item">
+              <label className="switch">
+                <input type="checkbox"/>
+                <span class="slider round"></span>
+              </label>
             </li>
           </ul>
         </div>
