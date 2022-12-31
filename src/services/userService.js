@@ -1,6 +1,6 @@
 export const setUserDetails = (body) => {
 
-    var request = fetch('/api/clientFeature',  {
+    var request = fetch('/api/client',  {
         method: "POST", 
         headers: {
           "Content-Type": "application/json",
