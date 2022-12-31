@@ -14,12 +14,12 @@ function setUser() {
     bodyMassIndex: null,
     neckGirth: parseInt(document.getElementById('grid-Neck').value),
     hipCircumference: parseInt(document.getElementById('grid-Hip').value),
-    Garth: parseInt(document.getElementById('grid-Garth').value),
+    garth: parseInt(document.getElementById('grid-Garth').value),
     isSmoke: parseInt(document.getElementById('grid-Smoke').value),
     sportDescription: "No",
     basalMetabolism: null,
     target: document.getElementById('grid-Target').value,
-    client: { id: localStorage.getItem('currentUser') },
+    user: { id: localStorage.getItem('currentUser') },
   });
 }
 
