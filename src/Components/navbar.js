@@ -6,6 +6,7 @@ import mainLogo from "../assets/14-removebg-preview.png";
 import userIcon from "../assets/userIcom.png";
 import { PostWithoutAuth } from "../services/HttpService";
 import { ChangeTrackerActivity } from "../services/HttpService";
+import { IsTracker, IsTrackerAvaliable } from "../services/userService";
 
 function Navbar() {
   const location = useLocation();
@@ -45,7 +46,7 @@ function Navbar() {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {showButtons === true && (
+            {showButtons && (
               <>
                 <li className="nav-item">
                   <Link
@@ -99,12 +100,14 @@ function Navbar() {
                 <img src={userIcon} alt="Fitness Tracker" width={40} />
               </a>
             </li>
-            <li className="nav-item">
-              <label className="switch">
-                <input type="checkbox"/>
-                <span class="slider round"></span>
-              </label>
-            </li>
+            {IsTracker && showButtons && (
+              <li className="nav-item">
+                <label className="switch">
+                  <input id="avaSwitch" type="checkbox" defaultChecked={IsTrackerAvaliable} onClick={changeTrackerActivty} />
+                  <span class="slider round"></span>
+                </label>
+              </li>
+            )}
           </ul>
         </div>
       </nav>

@@ -201,11 +201,11 @@
 }
 
 input:checked + .slider {
-  background-color: hsl(0, 90%, 54%);
+  background-color: hsl(102, 76%, 42%);
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px hsl(0, 90%, 54%);
+  box-shadow: 0 0 1px hsl(102, 76%, 42%);
 }
 
 input:checked + .slider:before {

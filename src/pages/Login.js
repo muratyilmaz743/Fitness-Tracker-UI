@@ -25,6 +25,7 @@ function Login() {
         localStorage.setItem("currentUser", result.userId);
         localStorage.setItem("userName", username);
         localStorage.setItem("role", result.userRole);
+        localStorage.setItem("trackerAvaliability", result); //???
 
         isTracker = localStorage.getItem("role");
 

@@ -20,3 +20,11 @@ export const GetMyUsers = (currentUserId) => {
 
   return request;
 };
+
+export const IsTracker = () => {
+  return localStorage.getItem("role") === "ROLE_TRACKER";
+}
+
+export const IsTrackerAvaliable = () => {
+  return IsTracker && localStorage.getItem("trackerAvaliability") === true;
+}
