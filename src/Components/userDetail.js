@@ -3,8 +3,6 @@ import "../css/userRegister.css";
 import { setUserDetails } from "../services/userService";
 import { GetAllTeachers } from "../services/teacherService";
 
-var teachers;
-
 function setUser() {
   setUserDetails({
     fullName: document.getElementById("grid-first-name").value,
@@ -23,6 +21,7 @@ function setUser() {
     basalMetabolism: null,
     target: document.getElementById("grid-Target").value,
     user: { id: localStorage.getItem("currentUser") },
+    tracker: { id: parseInt(document.getElementById("grid-teacher").value)},
   });
 }
 
