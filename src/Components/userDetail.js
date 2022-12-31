@@ -264,7 +264,7 @@ export default function userDetail() {
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               for="grid-teacher"
             >
-              Your Teacher?
+              Your Tracker?
             </label>
             <div className="relative">
               <select

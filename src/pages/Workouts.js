@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { GetAllExercises, GetExercise } from "../services/exerciseService";
+import { GetMyUsers } from "../services/userService";
 
 import FilterButton from "../Components/filteringButton";
 import WorkoutDisplay from "../Components/workoutDisplay";
@@ -12,6 +13,7 @@ class Workouts extends Component {
   constructor() {
     super();
     this.isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
+    const currentUserId = localStorage.getItem("currentUser");
     console.log(this.isTracker);
 
     GetAllExercises().then((res) =>
@@ -21,6 +23,18 @@ class Workouts extends Component {
           workout.push(result[i]);
         }
         this.setState({ workoutList: workout });
+      })
+    );
+
+    GetMyUsers(currentUserId).then((res) =>
+      res.json().then((userList) => {
+        for (let i = 0; i < 15; i++) {
+          var myUsers = document.getElementById("grid-user");
+          myUsers.options[myUsers.options.length] = new Option(
+            userList[i].fullName,
+            userList[i].clientId
+          );
+        }
       })
     );
   }
@@ -87,6 +101,10 @@ class Workouts extends Component {
                 fire={() => this.changeFilter("pectorals")}
               />
             </section>
+            <select
+              className="block appearance-none w-56 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-user"
+            ></select>
             <div class="bg-clip-text text-5xl p-4">{this.state.title}</div>
             <div className="grid grid-cols-5 gap-4 justify-items-center">
               {this.state.workoutList.map((workout) => {
