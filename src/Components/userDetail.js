@@ -4,6 +4,9 @@ import { setUserDetails } from "../services/userService";
 
 function setUser() {
   setUserDetails({
+    fullName: document.getElementById('grid-first-name').value,
+    emailAddress: document.getElementById('grid-email').value,
+    phoneNumber: document.getElementById('grid-phone').value,
     gender: parseInt(document.getElementById('grid-gender').value),
     age: 21,
     height: parseInt(document.getElementById('grid-height').value),
@@ -37,7 +40,7 @@ export default function userDetail() {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="grid-first-name"
               type="text"
-              placeholder="Jane"
+              placeholder="Jane Foster"
             />
             {/* <p className="text-red-500 text-xs italic">
               Please fill out this field.
@@ -46,13 +49,13 @@ export default function userDetail() {
           <div className="w-full md:w-1/2 px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-last-name"
+              for="grid-email"
             >
               Email Address
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-last-name"
+              id="grid-email"
               type="email"
               placeholder="jane@gmail.com"
             />
@@ -62,14 +65,15 @@ export default function userDetail() {
           <div className="w-full px-3">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-password"
+              for="grid-phone"
             >
               Phone Number
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-              id="grid-password"
+              id="grid-phone"
               type="tel"
+              maxLength="10"
               placeholder="5859874515"
             />
             <p className="text-gray-600 text-xs italic">
