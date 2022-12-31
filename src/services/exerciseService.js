@@ -24,6 +24,12 @@ export const GetAllExercises = () => {
   return request;
 };
 
-export const AddExercise = (exerciseId) => {
-  console.log(exerciseId)
+export const AddExercise = (body) => {
+  fetch("/api/????", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  });
 }

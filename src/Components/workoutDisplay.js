@@ -1,9 +1,21 @@
 import React from "react";
 import { AddExercise } from "../services/exerciseService";
 
-function WorkoutDisplay({ url, name, isTracker = false }) {
+function WorkoutDisplay({ url, name, id, isTracker = false }) {
   const addExercise = () => {
-    AddExercise(name)
+    var selectedUserId = parseInt(document.getElementById("grid-user").value);
+    var config = {
+      setNumber: parseInt(document.getElementById("grid-set").value),
+      repetitionNumber: parseInt(document.getElementById("grid-reps").value),
+      note: "",
+      client: {
+        id: selectedUserId,
+      },
+      fitnessMove: {
+        id: id,
+      },
+    };
+    AddExercise(config);
   };
   return (
     <>
@@ -17,11 +29,26 @@ function WorkoutDisplay({ url, name, isTracker = false }) {
           </div>
         </div>
         {isTracker === true && (
-          <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2" 
-          onClick={addExercise}
-          >
-            Ekle
-          </button>
+          <div id="exerciseAddings">
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-set"
+              type="text"
+              placeholder="3"
+            />
+            <input
+              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              id="grid-reps"
+              type="text"
+              placeholder="3"
+            />
+            <button
+              class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
+              onClick={addExercise}
+            >
+              Ekle
+            </button>
+          </div>
         )}
       </div>
     </>
