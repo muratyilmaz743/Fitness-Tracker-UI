@@ -31,7 +31,7 @@ export default function userDetail() {
     for (let i = 0; i < 20; i++) {
       if(teachers[i].is_active == 1) {
         var teacherBox = document.getElementById('grid-teacher');
-        teacherBox.options[teacherBox.options.length] = new Option(teachers[i].id, teachers[i].fullName);
+        teacherBox.options[teacherBox.options.length] = new Option(teachers[i].fullName, teachers[i].id);
       }
     }
   })
