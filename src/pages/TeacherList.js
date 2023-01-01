@@ -80,7 +80,8 @@ class TeacherList extends Component {
                       teacher.fullName,
                       teacher.emailAddress,
                       teacher.sgender,
-                      teacher.star_rate
+                      teacher.star_rate,
+                      teacher.experienceYear
                     )
                   }
                 />
