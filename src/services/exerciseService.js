@@ -25,7 +25,7 @@ export const GetAllExercises = () => {
 };
 
 export const AddExercise = (body) => {
-  fetch("/api/????", {
+  fetch("/api/trainingProgram", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
