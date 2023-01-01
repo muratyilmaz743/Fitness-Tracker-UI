@@ -16,6 +16,7 @@ import Career from "./pages/Career";
 import UserDetail from "./pages/UserDetail";
 import Support from "./pages/Support";
 import TrackersStudents from "./pages/TrackersStudents";
+import UpdateProfile from "./pages/UpdateProfile";
 
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/react-modal/3.14.3/react-modal.min.js"
@@ -41,6 +42,7 @@ class MyElement extends React.Component {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
           <Route path="/myStudents" element={<TrackersStudents />} />
+          <Route path="/updateProfile" element={<UpdateProfile />} />
           <Route path="/addPlan" element={<AddPlan />} />
           <Route path="/" element={<Main />} />
         </Routes>
