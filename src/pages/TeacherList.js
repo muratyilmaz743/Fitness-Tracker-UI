@@ -48,7 +48,7 @@ class TeacherList extends Component {
     name,
     email,
     gender,
-    rate,
+
     experienceYear,
     description
   ) {
@@ -58,7 +58,7 @@ class TeacherList extends Component {
       name: name,
       email: email,
       gender: gender,
-      rate: rate,
+
       mailTo: "mailto:" + email,
       experienceYear: experienceYear,
       description: description,
@@ -90,7 +90,7 @@ class TeacherList extends Component {
                       teacher.fullName,
                       teacher.emailAddress,
                       teacher.sgender,
-                      teacher.star_rate,
+
                       teacher.experienceYear,
                       teacher.description
                     )
@@ -128,8 +128,6 @@ class TeacherList extends Component {
 
             <div className="personal-info absolute top-96 left-12 text-2xl">
               Tracker Informations <br></br>
-              Rate:
-              <Rating rate={this.state.rate} />
               <i> Name: {this.state.name}</i>
               <div>Experience Year: {this.state.experienceYear}</div>
               <div>Description: {this.state.description}</div>
