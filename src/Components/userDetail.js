@@ -29,7 +29,7 @@ export default function userDetail() {
   GetAllTeachers().then((res) =>
     res.json().then((teachers) => {
       for (let i = 0; i < 20; i++) {
-        if (teachers[i].is_active == 1) {
+        if (teachers[i].active === true) {
           var teacherBox = document.getElementById("grid-teacher");
           teacherBox.options[teacherBox.options.length] = new Option(
             teachers[i].fullName,

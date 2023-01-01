@@ -92,7 +92,7 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
             <img className="h-28" src={url} alt="gif of move" />
           </div>
         </div>
-        {isTracker === true && (
+        {userTracker === true && (
           <div id="exerciseAddings" className="grid justify-center">
             <div className="flex justify-evenly">
               <button
