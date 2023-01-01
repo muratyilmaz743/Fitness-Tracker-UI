@@ -1,6 +1,19 @@
 import React from "react";
 
-export default function trackersStudents() {
+export default function trackersStudents({
+  fullName,
+  weight,
+  height,
+  garth,
+  hip,
+  neck,
+  basal,
+  massIndex,
+  smoking,
+  sportDesc,
+  target,
+  gender
+}) {
   return (
     // className="w-full flex justify-center"
     <div className="flex">
@@ -14,50 +27,43 @@ export default function trackersStudents() {
           <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
             <li class="py-3 sm:py-4">
               <div class="flex items-center space-x-4">
-                {/* <div class="flex-shrink-0">
-                  <img
-                    class="w-8 h-8 rounded-full"
-                    src="/docs/images/people/profile-picture-1.jpg"
-                    alt="Neil image"
-                  />
-                </div> */}
                 <div class="flex-1 min-w-0">
                   <p class="text-xl font-medium text-gray-900 truncate dark:text-white">
-                    Neil Sims
+                    {fullName}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Gender: Female
+                    Gender: {gender}
                   </p>
 
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Weight: 80
+                    Weight: {weight}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Height:190
+                    Height:{height}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Garth: 180
+                    Garth: {garth}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Hip Cirfumference: 170
+                    Hip Cirfumference: {hip}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Neck Girth: 170
+                    Neck Girth: {neck}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Basal Metabolism: 27
+                    Basal Metabolism: {basal}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Body Mass Index: 27
+                    Body Mass Index: {massIndex}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Smoking: Yes
+                    Smoking: {smoking}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Sport Description: fsdfddsf
+                    Sport Description: {sportDesc}
                   </p>
                   <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                    Target: Lose Weight
+                    Target: {target}
                   </p>
                 </div>
                 {/* <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">

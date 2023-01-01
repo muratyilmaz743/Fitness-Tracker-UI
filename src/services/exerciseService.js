@@ -32,4 +32,4 @@ export const AddExercise = (body) => {
     },
     body: JSON.stringify(body),
   });
-}
+};
