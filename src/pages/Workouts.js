@@ -118,7 +118,7 @@ class Workouts extends Component {
                       <WorkoutDisplay
                         name={workout.name}
                         url={workout.gifUrl}
-                        id={workout.id} //???
+                        id={workout.id}
                         isTracker={true}
                       />
                     </>
