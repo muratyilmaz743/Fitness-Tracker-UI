@@ -103,8 +103,14 @@ function Navbar() {
             {IsTracker && showButtons && (
               <li className="nav-item">
                 <label className="switch">
-                  <input id="avaSwitch" type="checkbox" defaultChecked={IsTrackerAvaliable} onClick={changeTrackerActivty} />
+                  <input
+                    id="avaSwitch"
+                    type="checkbox"
+                    defaultChecked={IsTrackerAvaliable}
+                    onClick={changeTrackerActivty}
+                  />
                   <span class="slider round"></span>
+                  <span className="text-base leading-[3rem] ">Activity</span>
                 </label>
               </li>
             )}
