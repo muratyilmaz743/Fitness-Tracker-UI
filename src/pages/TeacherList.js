@@ -77,7 +77,7 @@ class TeacherList extends Component {
             Find the best tracker for yourself
           </strong>
 
-          <div class="grid grid-cols-4 gap-3 justify-items-center">
+          <div class="grid grid-cols-1 gap-3 md:grid-cols-4 justify-items-center">
             {this.state.teachers.map((teacher) => {
               return (
                 <Teacher

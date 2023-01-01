@@ -111,7 +111,7 @@ class Workouts extends Component {
                 id="grid-user"
               ></select>
               <div class="bg-clip-text text-5xl p-4">{this.state.title}</div>
-              <div className="grid grid-cols-5 gap-4 justify-items-center">
+              <div className="grid  gap-4  grid-cols-1 md:grid-cols-5 justify-items-center">
                 {this.state.workoutList.map((workout) => {
                   return (
                     <>
