@@ -1,8 +1,9 @@
 import React from "react";
 import { AddExercise } from "../services/exerciseService";
-import { IsTracker } from "../services/userService";
 
 function WorkoutDisplay({ url, name, id, isTracker = false }) {
+  const userTracker = localStorage.getItem("role") === "ROLE_TRACKER";
+  
   const addExercise = (el) => {
     var selectedUserId = parseInt(document.getElementById("grid-user").value);
     var config = {
@@ -84,7 +85,7 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
             <img className="h-28" src={url} alt="gif of move" />
           </div>
         </div>
-        {IsTracker === true && (
+        {userTracker === true && (
           <div id="exerciseAddings" className="grid justify-center">
             <div className="flex justify-evenly">
               <button
