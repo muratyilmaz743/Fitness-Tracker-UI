@@ -17,7 +17,7 @@ const Teacher = ({
   };
   return (
     <>
-      <div id="teacherBox" className="box-border h-56 w-56 p-4 border-4 m-6">
+      <div id="teacherBox" className="box-border h-56 w-56 p-4 border-4 m-6 ">
         <div class="mb-4">
           <img
             src={imgUrl}

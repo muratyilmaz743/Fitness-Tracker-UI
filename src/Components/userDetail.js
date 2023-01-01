@@ -21,25 +21,30 @@ function setUser() {
     basalMetabolism: null,
     target: document.getElementById("grid-Target").value,
     user: { id: localStorage.getItem("currentUser") },
-    tracker: { id: parseInt(document.getElementById("grid-teacher").value)},
+    tracker: { id: parseInt(document.getElementById("grid-teacher").value) },
   });
 }
 
 export default function userDetail() {
   GetAllTeachers().then((res) =>
-  res.json().then((teachers) => {
-    for (let i = 0; i < 20; i++) {
-      if(teachers[i].is_active == 1) {
-        var teacherBox = document.getElementById('grid-teacher');
-        teacherBox.options[teacherBox.options.length] = new Option(teachers[i].fullName, teachers[i].id);
+    res.json().then((teachers) => {
+      for (let i = 0; i < 20; i++) {
+        if (teachers[i].is_active == 1) {
+          var teacherBox = document.getElementById("grid-teacher");
+          teacherBox.options[teacherBox.options.length] = new Option(
+            teachers[i].fullName,
+            teachers[i].id
+          );
+        }
       }
-    }
-  })
-);
+    })
+  );
   return (
     <div className="w-full h-screen flex justify-center items-center style-form-wrapper">
       <form>
-        <h1 className="text-5xl py-2">Hadi Tanışalım</h1>
+        <h1 className="text-xl py-2 mb-7">
+          Enter your information so we can get to know you better
+        </h1>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
@@ -87,10 +92,12 @@ export default function userDetail() {
               type="tel"
               maxLength="10"
               placeholder="5859874515"
+              required
             />
-            <p className="text-gray-600 text-xs italic">
+
+            {/* <p className="text-gray-600 text-xs italic">
               Make it as long and as crazy as you'd like
-            </p>
+            </p> */}
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-2">
@@ -255,7 +262,7 @@ export default function userDetail() {
               class="mt-5 rounded-md bg-black px-10 py-2 text-white"
               onClick={setUser}
             >
-              Send Message
+              Enter
             </button>
           </div>
 
@@ -270,8 +277,7 @@ export default function userDetail() {
               <select
                 className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-teacher"
-              >
-              </select>
+              ></select>
               <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                 <svg
                   className="fill-current h-4 w-4"
