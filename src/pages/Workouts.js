@@ -8,6 +8,7 @@ class Workouts extends Component {
   state = {
     workoutList: [],
     title: "Bütün Egzersizler",
+    userTracker : localStorage.getItem("role") === "ROLE_TRACKER"
   };
 
   constructor() {
@@ -26,7 +27,7 @@ class Workouts extends Component {
       })
     );
 
-    if (IsTracker === true) {
+    if (this.state.userTracker === true) {
       GetMyUsers(currentUserId).then((res) =>
         res.json().then((userList) => {
           for (let i = 0; i < 15; i++) {
