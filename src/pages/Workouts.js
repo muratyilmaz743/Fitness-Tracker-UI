@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { GetAllExercises, GetExercise } from "../services/exerciseService";
-import { GetMyUsers } from "../services/userService";
+import { GetMyUsers, IsTracker } from "../services/userService";
 
 import FilterButton from "../Components/filteringButton";
 import WorkoutDisplay from "../Components/workoutDisplay";
@@ -26,17 +26,19 @@ class Workouts extends Component {
       })
     );
 
-    GetMyUsers(currentUserId).then((res) =>
-      res.json().then((userList) => {
-        for (let i = 0; i < 15; i++) {
-          var myUsers = document.getElementById("grid-user");
-          myUsers.options[myUsers.options.length] = new Option(
-            userList[i].fullName,
-            userList[i].clientId
-          );
-        }
-      })
-    );
+    if (IsTracker === true) {
+      GetMyUsers(currentUserId).then((res) =>
+        res.json().then((userList) => {
+          for (let i = 0; i < 15; i++) {
+            var myUsers = document.getElementById("grid-user");
+            myUsers.options[myUsers.options.length] = new Option(
+              userList[i].fullName,
+              userList[i].clientId
+            );
+          }
+        })
+      );
+    }
   }
 
   getActiveFilter(filter) {
