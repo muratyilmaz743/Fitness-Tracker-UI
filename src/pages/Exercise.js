@@ -1,7 +1,6 @@
 import { Component } from "react";
 import { GetProgram } from "../services/exerciseService";
 import Workout from "../Components/workout";
-import Meal from "../Components/meal";
 
 class Exercises extends Component {
   state = {
@@ -17,7 +16,7 @@ class Exercises extends Component {
         for (let i = 0; i < 20; i++) {
           p.push(result[i]);
         }
-        this.setState({ teachers: p });
+        this.setState({ program: p });
       })
     );
   }
@@ -54,51 +53,17 @@ class Exercises extends Component {
               Workout Plan
             </span>
             <div className="flex flex-row overflow-auto">
-              <Workout
-                name={"Şınav"}
-                notes={"3 x 10, 45sn dinlenme ile"}
-              />
-              <Workout
-                name={"Bench Press"}
-                notes={"3 x 10, 45sn dinlenme ile"}
-              />
-              <Workout
-                name={"Incline Machine Press"}
-                notes={"4 x 10, 30sn dinlenme ile"}
-              />
-              <Workout
-                name={"Dumbell Pullover"}
-                notes={"4 x 6, 45 sn dinlenme ile"}
-              />
-              <Workout
-                name={"Dumbell Fly"}
-                notes={"4 x 10, 30sn dinlenme ile"}
-              />
-            </div>
-          </div>
-          <div className="text-left border-indigo-500 p-4 w-full">
-            <span class="bg-clip-text text-2xl border-b-4 p-4">Meal Plan</span>
-            <div className="flex flex-row overflow-auto">
-              <Meal
-                name={"Kahvaltı"}
-                notes={"1 dilim az yağlı, az tuzlu peynir (Mümkünse ev yapımı 2 yemek kaşığı lor peyniri), 2 adet haşlanmış yumurta"}
-              />
-              <Meal
-                name={"Ara öğün"}
-                notes={"1 bardak yağsız süt ya da şekersiz bitki çayı, 2 adet ceviz içi"}
-              />
-              <Meal
-                name={"Öğle Yemeği"}
-                notes={"8-9 yemek kaşığı sebze yemeği, 3 yemek kaşığı yoğurt, 2 dilim tahıllı ekmek ya da 8 kaşık yağsız tuzsuz makarna veya pilav"}
-              />
-              <Meal
-                name={"Antrenman Öncesi"}
-                notes={"1 dilim tam tahıllı ekmek, 1 tatlı kaşığı şeker ilavesiz fıstık ezmesi, küçük boy bir yeşil elma"}
-              />
-              <Meal
-                name={"Akşam Yemeği"}
-                notes={"1 porsiyon az yağlı köfte, et, tavuk ya da balık yemeği, 8-9 yemek kaşığı pilav ya da makarna, 1 kase yoğurt, bol salata"}
-              />
+              {this.state.program.map((exercise) => {
+                return (
+                  <Workout
+                    setNumber={exercise.setNumber}
+                    repetitionNumber={exercise.repetitionNumber}
+                    note={exercise.note}
+                    gifUrl={exercise.gifUrl}
+                    name={exercise.fullName}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>

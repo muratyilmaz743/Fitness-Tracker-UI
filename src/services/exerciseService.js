@@ -1,7 +1,7 @@
 const backendApiUrl = "http://localhost:8082/api/";
 
-export const GetProgram = () => {
-  var request = fetch(backendApiUrl + "trainingProgram/getAll", {
+export const GetProgram = (userId ) => {
+  var request = fetch(backendApiUrl + "trainingProgram/getAllByUserId?userId=" + userId, {
     method: "GET",
   });
   return request;

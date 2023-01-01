@@ -1,12 +1,12 @@
 import React from "react";
 import Students from "../Components/trackersStudents";
-import { GetAllStudents } from "../services/teacherService";
+import { GetMyUsers } from "../services/userService";
 
 export default function TrackersStudents() {
   let trackersStudents = [];
   const trackerId = localStorage.getItem("currentUser");
 
-  GetAllStudents(trackerId).then((res) =>
+  GetMyUsers(trackerId).then((res) =>
     res.json().then((students) => {
       for (const student of students) {
         trackersStudents.push(student);
