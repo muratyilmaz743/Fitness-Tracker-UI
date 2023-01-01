@@ -100,7 +100,8 @@ function Navbar() {
                 <img src={userIcon} alt="Fitness Tracker" width={40} />
               </a>
             </li>
-            {IsTracker && showButtons && (
+            {IsTracker === true && (
+              <>
               <li className="nav-item">
                 <label className="switch">
                   <input
@@ -113,6 +114,7 @@ function Navbar() {
                   <span className="text-base leading-[3rem] ">Activity</span>
                 </label>
               </li>
+              </>
             )}
           </ul>
         </div>
