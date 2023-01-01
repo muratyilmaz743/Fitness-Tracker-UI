@@ -19,6 +19,7 @@ class TeacherList extends Component {
     teachers: [],
     mailTo: "",
     experienceYear: "",
+    description: "",
   };
 
   constructor() {
@@ -42,7 +43,15 @@ class TeacherList extends Component {
     this.setState({ teachers: this.teachers.concat(element) });
   }
 
-  handleOpenModal(image, name, email, gender, rate, experienceYear) {
+  handleOpenModal(
+    image,
+    name,
+    email,
+    gender,
+    rate,
+    experienceYear,
+    description
+  ) {
     this.setState({
       showModal: true,
       imgUrl: image,
@@ -52,6 +61,7 @@ class TeacherList extends Component {
       rate: rate,
       mailTo: "mailto:" + email,
       experienceYear: experienceYear,
+      description: description,
     });
   }
 
@@ -81,7 +91,8 @@ class TeacherList extends Component {
                       teacher.emailAddress,
                       teacher.sgender,
                       teacher.star_rate,
-                      teacher.experienceYear
+                      teacher.experienceYear,
+                      teacher.description
                     )
                   }
                 />
@@ -121,6 +132,7 @@ class TeacherList extends Component {
               <Rating rate={this.state.rate} />
               <i> Name: {this.state.name}</i>
               <div>Experience Year: {this.state.experienceYear}</div>
+              <div>Description: {this.state.description}</div>
               <div>
                 <a href={this.state.mailTo}>
                   <button

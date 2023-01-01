@@ -1,7 +1,15 @@
 import React from "react";
 import Rating from "../Components/ratingStars";
 
-const Teacher = ({ imgUrl, openModal, name, email, rate, experienceYear }) => {
+const Teacher = ({
+  imgUrl,
+  openModal,
+  name,
+  email,
+  rate,
+  experienceYear,
+  description,
+}) => {
   var mailto = "mailto:" + email;
 
   const handleOpenModal = () => {
@@ -24,6 +32,7 @@ const Teacher = ({ imgUrl, openModal, name, email, rate, experienceYear }) => {
         >
           {name}
           {experienceYear}
+          {description}
           <a href={mailto}>{email}</a>
         </button>
       </div>

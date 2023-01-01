@@ -34,13 +34,13 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-set"
               type="text"
-              placeholder="3"
+              placeholder="Sets"
             />
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-reps"
               type="text"
-              placeholder="3"
+              placeholder="Repetitions"
             />
             <button
               class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-2"
