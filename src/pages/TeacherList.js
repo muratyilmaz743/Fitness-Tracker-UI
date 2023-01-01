@@ -2,7 +2,6 @@ import { Component } from "react";
 import React from "react";
 import ReactModal from "react-modal";
 import { GetAllTeachers } from "../services/teacherService";
-import Rating from "../Components/ratingStars";
 
 import Teacher from "../Components/teacher";
 import Footer from "../Components/footer";

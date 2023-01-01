@@ -1,6 +1,6 @@
 import { Component } from "react";
 import { GetAllExercises, GetExercise } from "../services/exerciseService";
-import { GetMyUsers, IsTracker } from "../services/userService";
+import { GetMyUsers } from "../services/userService";
 
 import FilterButton from "../Components/filteringButton";
 import WorkoutDisplay from "../Components/workoutDisplay";
@@ -16,7 +16,6 @@ class Workouts extends Component {
     super();
     this.isTracker = localStorage.getItem("role") === "ROLE_TRACKER";
     const currentUserId = localStorage.getItem("currentUser");
-    console.log(this.isTracker);
 
     GetAllExercises().then((res) =>
       res.json().then((result) => {
@@ -106,10 +105,12 @@ class Workouts extends Component {
                   fire={() => this.changeFilter("pectorals")}
                 />
               </section>
-              <select
-                className="block appearance-none w-56 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-user"
-              ></select>
+              {this.isTracker && (
+                <select
+                  className="block appearance-none w-56 bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="grid-user"
+                ></select>
+              )}
               <div class="bg-clip-text text-5xl p-4">{this.state.title}</div>
               <div className="grid  gap-4  grid-cols-1 md:grid-cols-5 justify-items-center">
                 {this.state.workoutList.map((workout) => {

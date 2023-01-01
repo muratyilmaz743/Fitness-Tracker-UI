@@ -13,6 +13,8 @@ function Navbar() {
 
   var showButtons = location.pathname !== "/";
 
+  const userTracker = localStorage.getItem("role") === "ROLE_TRACKER";
+
   const [click, setClick] = useState(false);
   const userId = localStorage.getItem("currentUser");
   const handleClick = () => setClick(!click);
@@ -48,15 +50,57 @@ function Navbar() {
           <ul className={click ? "nav-menu active" : "nav-menu"}>
             {showButtons && (
               <>
-                <li className="nav-item">
-                  <Link
-                    to="/teacherList"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                  >
-                    Trackers
-                  </Link>
-                </li>
+                {!userTracker && (
+                  <>
+                    <li className="nav-item">
+                      <Link
+                        to="/teacherList"
+                        className="nav-links"
+                        onClick={closeMobileMenu}
+                      >
+                        Trackers
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        to="/exercise"
+                        className="nav-links"
+                        onClick={closeMobileMenu}
+                      >
+                        Plan
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        to="/stats"
+                        className="nav-links"
+                        onClick={closeMobileMenu}
+                      >
+                        Statistics
+                      </Link>
+                    </li>
+                    <li className="nav-item">
+                      <Link
+                        to="/updateProfile"
+                        className="nav-links"
+                        onClick={closeMobileMenu}
+                      >
+                        Update Profile
+                      </Link>
+                    </li>
+                  </>
+                )}
+                {userTracker && (
+                  <li className="nav-item">
+                    <Link
+                      to="/myStudents"
+                      className="nav-links"
+                      onClick={closeMobileMenu}
+                    >
+                      My Students
+                    </Link>
+                  </li>
+                )}
                 <li className="nav-item">
                   <Link
                     to="/workoutTips"
@@ -64,24 +108,6 @@ function Navbar() {
                     onClick={closeMobileMenu}
                   >
                     Exercises
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to="/exercise"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                  >
-                    Plan
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link
-                    to="/stats"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                  >
-                    Statistics
                   </Link>
                 </li>
               </>
@@ -100,20 +126,20 @@ function Navbar() {
                 <img src={userIcon} alt="Fitness Tracker" width={40} />
               </a>
             </li>
-            {IsTracker === true && (
+            {userTracker && (
               <>
-              <li className="nav-item">
-                <label className="switch">
-                  <input
-                    id="avaSwitch"
-                    type="checkbox"
-                    defaultChecked={IsTrackerAvaliable}
-                    onClick={changeTrackerActivty}
-                  />
-                  <span class="slider round"></span>
-                  <span className="text-base leading-[3rem] ">Activity</span>
-                </label>
-              </li>
+                <li className="nav-item">
+                  <label className="switch">
+                    <input
+                      id="avaSwitch"
+                      type="checkbox"
+                      defaultChecked={IsTrackerAvaliable}
+                      onClick={changeTrackerActivty}
+                    />
+                    <span class="slider round"></span>
+                    <span className="text-base leading-[3rem] ">Activity</span>
+                  </label>
+                </li>
               </>
             )}
           </ul>
