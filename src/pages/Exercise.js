@@ -11,7 +11,9 @@ class Exercises extends Component {
   constructor() {
     super();
 
-    GetProgram().then((res) =>
+    const userId = localStorage.getItem('currentUser')
+
+    GetProgram(userId).then((res) =>
       res.json().then((result) => {
         let p = [...this.state.program];
         for (let i = 0; i < 20; i++) {
