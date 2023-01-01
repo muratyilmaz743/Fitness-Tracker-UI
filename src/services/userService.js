@@ -11,7 +11,7 @@ export const setUserDetails = (body) => {
 };
 
 export const GetMyUsers = (currentUserId) => {
-  var request = fetch("/api/client/filter?trackerId=" + currentUserId, {
+  var request = fetch("/api/client/filter?userId=" + currentUserId, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

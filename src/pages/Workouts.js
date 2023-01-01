@@ -8,7 +8,7 @@ class Workouts extends Component {
   state = {
     workoutList: [],
     title: "Bütün Egzersizler",
-    userTracker : localStorage.getItem("role") === "ROLE_TRACKER"
+    userTracker: localStorage.getItem("role") === "ROLE_TRACKER",
   };
 
   constructor() {

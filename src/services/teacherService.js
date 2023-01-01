@@ -5,3 +5,11 @@ export const GetAllTeachers = () => {
 
   return request;
 };
+
+export const GetAllStudents = (trackerId) => {
+  var request = fetch("http://localhost:8082/api/trainingProgram/getAllByUserId?userId=" + trackerId, {
+    method: "GET",
+  });
+
+  return request;
+};
