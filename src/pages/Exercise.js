@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { GetProgram } from "../services/exerciseService";
 import Workout from "../Components/workout";
+import Footers from "../Components/footer";
 
 class Exercises extends Component {
   state = {

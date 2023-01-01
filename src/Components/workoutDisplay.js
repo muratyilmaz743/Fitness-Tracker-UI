@@ -3,13 +3,20 @@ import { AddExercise } from "../services/exerciseService";
 
 function WorkoutDisplay({ url, name, id, isTracker = false }) {
   const userTracker = localStorage.getItem("role") === "ROLE_TRACKER";
-  
+
   const addExercise = (el) => {
     var selectedUserId = parseInt(document.getElementById("grid-user").value);
     var config = {
-      setNumber: parseInt(el.target.closest(".settingsWrapper").firstChild.lastChild.firstChild.childNodes[0].firstChild.value),
-      repetitionNumber: parseInt(el.target.closest(".settingsWrapper").firstChild.lastChild.firstChild.childNodes[0].lastChild.value),
-      note: el.target.closest(".settingsWrapper").firstChild.lastChild.firstChild.childNodes[1].value,
+      setNumber: parseInt(
+        el.target.closest(".settingsWrapper").firstChild.lastChild.firstChild
+          .childNodes[0].firstChild.value
+      ),
+      repetitionNumber: parseInt(
+        el.target.closest(".settingsWrapper").firstChild.lastChild.firstChild
+          .childNodes[0].lastChild.value
+      ),
+      note: el.target.closest(".settingsWrapper").firstChild.lastChild
+        .firstChild.childNodes[1].value,
       client: {
         id: selectedUserId,
       },
@@ -85,7 +92,7 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
             <img className="h-28" src={url} alt="gif of move" />
           </div>
         </div>
-        {userTracker === true && (
+        {isTracker === true && (
           <div id="exerciseAddings" className="grid justify-center">
             <div className="flex justify-evenly">
               <button
