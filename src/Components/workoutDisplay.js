@@ -24,6 +24,7 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
         id: id,
       },
     };
+    cancelNote();
     AddExercise(config);
   };
   const addNotes = (el) => {
