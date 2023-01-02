@@ -26,6 +26,21 @@ export const GetMyUsers = (currentUserId) => {
   return request;
 };
 
+export const UpdateUser = (currentUserId, body) => {
+  var request = fetch(
+    backendApiUrl + "/client/update/" + currentUserId,
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }
+  );
+
+  return request;
+};
+
 export const IsTracker = () => {
   return localStorage.getItem("role") === "ROLE_TRACKER";
 };

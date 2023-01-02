@@ -51,7 +51,7 @@ function Navbar() {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {(!inLogin && !inMain && !inRegister) && (
+            {(inLogin && inMain && inRegister) && (
               <>
                 {!userTracker && (
                   <>
