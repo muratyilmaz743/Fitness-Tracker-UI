@@ -105,8 +105,8 @@ export default function updateProfile() {
 
 const updateMyData = () => {
   const currentUser = localStorage.getItem("currentUser");
-
-  if(!validateAreas) {
+  if (!validateAreas()) {
+    alert("Please fill all the fields!")
     return;
   }
 
@@ -131,6 +131,10 @@ const updateMyData = () => {
 }
 
 const validateAreas = () => {
-  console.log(document.getElementById("grid-garth").value)
+  return document.getElementById("grid-garth").value !== "" &&
+  document.getElementById("grid-garth").value !== "" &&
+  document.getElementById("grid-garth").value !== "" &&
+  document.getElementById("grid-garth").value !== "" &&
+  document.getElementById("grid-garth").value !== "";
 
 }
