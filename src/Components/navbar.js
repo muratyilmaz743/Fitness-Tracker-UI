@@ -110,36 +110,39 @@ function Navbar() {
                     Exercises
                   </Link>
                 </li>
-              </>
-            )}
-            <li className="nav-item">
-              <button
-                className="nav-links"
-                style={{ color: "red" }}
-                onClick={logout}
-              >
-                Logout
-              </button>
-            </li>
-            <li className="nav-item userIcon">
-              <a>
-                <img src={userIcon} alt="Fitness Tracker" width={40} />
-              </a>
-            </li>
-            {userTracker && (
-              <>
+
                 <li className="nav-item">
-                  <label className="switch">
-                    <input
-                      id="avaSwitch"
-                      type="checkbox"
-                      defaultChecked={IsTrackerAvaliable}
-                      onClick={changeTrackerActivty}
-                    />
-                    <span class="slider round"></span>
-                    <span className="text-base leading-[3rem] ">Activity</span>
-                  </label>
+                  <button
+                    className="nav-links"
+                    style={{ color: "red" }}
+                    onClick={logout}
+                  >
+                    Logout
+                  </button>
                 </li>
+                <li className="nav-item userIcon">
+                  <a>
+                    <img src={userIcon} alt="Fitness Tracker" width={40} />
+                  </a>
+                </li>
+                {userTracker && (
+                  <>
+                    <li className="nav-item">
+                      <label className="switch">
+                        <input
+                          id="avaSwitch"
+                          type="checkbox"
+                          defaultChecked={IsTrackerAvaliable}
+                          onClick={changeTrackerActivty}
+                        />
+                        <span class="slider round"></span>
+                        <span className="text-base leading-[3rem] ">
+                          Activity
+                        </span>
+                      </label>
+                    </li>
+                  </>
+                )}
               </>
             )}
           </ul>
