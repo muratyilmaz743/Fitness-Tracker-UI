@@ -32,6 +32,7 @@ class TrackersStudents extends Component {
         </div>
         <div class="px-40 grid grid-cols-3 gap-3 justify-items-center">
           {this.state.trackersStudents.map((student) => {
+            console.log(student);
             var realGender = student.gender === true ? "Male" : "Female";
 
             return (

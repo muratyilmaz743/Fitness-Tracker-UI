@@ -13,12 +13,15 @@ export const setUserDetails = (body) => {
 };
 
 export const GetMyUsers = (currentUserId) => {
-  var request = fetch(backendApiUrl + "/client/filter?userId=" + currentUserId, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  var request = fetch(
+    backendApiUrl + "/client/filterAll?userId=" + currentUserId,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
 
   return request;
 };

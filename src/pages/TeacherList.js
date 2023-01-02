@@ -153,6 +153,15 @@ class TeacherList extends Component {
                       Send Mail
                     </button>
                   </a>
+
+                  <a href="http://localhost:3000/userDetail">
+                    <button
+                      class="bg-orange-500 text-white active:bg-orange-600 font-bold uppercase text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 mt-5"
+                      type="button"
+                    >
+                      Choose Tracker
+                    </button>
+                  </a>
                 </div>
                 <div>{this.state.phone}</div>
               </div>
