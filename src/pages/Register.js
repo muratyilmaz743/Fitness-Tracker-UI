@@ -5,7 +5,7 @@ class Register extends Component {
 
   
   register() {
-    PostWithoutAuth("http://localhost:8082/auth/register", {
+    PostWithoutAuth("/auth/register", {
       userName: document.getElementById('userName').value,
       password: document.getElementById('password').value,
     })

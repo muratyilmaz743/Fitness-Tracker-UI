@@ -1,3 +1,5 @@
+const backendApiUrl = "http://localhost:8082";
+
 export const PostWithAuth = (url, body) => {
   var request = fetch(url, {
     method: "POST",
@@ -12,7 +14,7 @@ export const PostWithAuth = (url, body) => {
 };
 
 export const PostWithoutAuth = (url, body) => {
-  var request = fetch(url, {
+  var request = fetch(backendApiUrl + url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
