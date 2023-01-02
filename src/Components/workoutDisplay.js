@@ -24,8 +24,9 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
         id: id,
       },
     };
-    // cancelNote();
+    
     AddExercise(config);
+    cancelNote();
   };
   const addNotes = (el) => {
     var settings =
@@ -37,15 +38,15 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
     image.classList.add("hidden");
   };
 
-  // const cancelNote = (el) => {
-  //   var settings =
-  //     el.target.closest(".settingsWrapper").firstChild.lastChild.firstChild;
-  //   var image =
-  //     el.target.closest(".settingsWrapper").firstChild.lastChild.lastChild;
+  const cancelNote = (el) => {
+    var settings =
+      el.target.closest(".settingsWrapper").firstChild.lastChild.firstChild;
+    var image =
+      el.target.closest(".settingsWrapper").firstChild.lastChild.lastChild;
 
-  //   settings.classList.add("hidden");
-  //   image.classList.remove("hidden");
-  // };
+    settings.classList.add("hidden");
+    image.classList.remove("hidden");
+  };
   return (
     <>
       <div className="h-56 w-56 p-4 border-4 border-black m-6 mb-[4rem] rounded-xl min-w-[14rem] bg-white settingsWrapper">
@@ -84,7 +85,7 @@ function WorkoutDisplay({ url, name, id, isTracker = false }) {
                 </button>
                 <button
                   class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full mt-2"
-                  // onClick={(e) => cancelNote(e)}
+                  onClick={(e) => cancelNote(e)}
                 >
                   X
                 </button>

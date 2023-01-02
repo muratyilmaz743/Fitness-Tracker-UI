@@ -11,7 +11,9 @@ import { IsTrackerAvaliable } from "../services/userService";
 function Navbar() {
   const location = useLocation();
 
-  var showButtons = location.pathname !== "/" || location.pathname !== "/register" || location.pathname !== "/login" ;
+  var inMain = location.pathname !== "/";
+  var inRegister = location.pathname !== "/register";
+  var inLogin = location.pathname !== "/login";
 
   const userTracker = localStorage.getItem("role") === "ROLE_TRACKER";
 
@@ -49,7 +51,7 @@ function Navbar() {
             <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
           <ul className={click ? "nav-menu active" : "nav-menu"}>
-            {showButtons && (
+            {(!inLogin && !inMain && !inRegister) && (
               <>
                 {!userTracker && (
                   <>
