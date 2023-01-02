@@ -45,16 +45,16 @@ class Workouts extends Component {
   getActiveFilter(filter) {
     switch (filter) {
       case "abs":
-        this.setState({ title: "Abs Exercises" });
+        this.setState({ title: "Karın Egzersizleri" });
         break;
       case "lats":
-        this.setState({ title: "Abs Exercises" });
+        this.setState({ title: "Sırt Egzersizleri" });
         break;
       case "pectorals":
-        this.setState({ title: "Lats Exercises" });
+        this.setState({ title: "Göğüs Egzersizleri" });
         break;
       default:
-        this.setState({ title: "All of them" });
+        this.setState({ title: "Bütün Egzersizler" });
     }
   }
 
@@ -91,17 +91,17 @@ class Workouts extends Component {
           <div className="container-md h-full bg-gradient-to-r from-cyan-50 to-blue-50 rounded-3xl m-5">
             <div className="text-left border-black-500 p-4 w-full">
               <section className="text-center">
-                <FilterButton name={"All"} fire={() => this.allExercises()} />
+                <FilterButton name={"Hepsi"} fire={() => this.allExercises()} />
                 <FilterButton
-                  name={"Abs"}
+                  name={"Karın"}
                   fire={() => this.changeFilter("abs")}
                 />
                 <FilterButton
-                  name={"Lats"}
+                  name={"Sırt"}
                   fire={() => this.changeFilter("lats")}
                 />
                 <FilterButton
-                  name={"Pectorals"}
+                  name={"Göğüs"}
                   fire={() => this.changeFilter("pectorals")}
                 />
               </section>
