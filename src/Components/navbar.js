@@ -27,6 +27,7 @@ function Navbar() {
       userId: userId,
       refreshToken: refreshToken,
     });
+    window.location.href = "/login";
   };
 
   const changeTrackerActivty = () => {
