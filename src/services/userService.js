@@ -1,3 +1,5 @@
+const backendApiUrl = "http://localhost:8082/api";
+
 export const setUserDetails = (body) => {
   var request = fetch("/api/client", {
     method: "POST",
@@ -11,7 +13,7 @@ export const setUserDetails = (body) => {
 };
 
 export const GetMyUsers = (currentUserId) => {
-  var request = fetch("/api/client/filter?userId=" + currentUserId, {
+  var request = fetch(backendApiUrl + "/client/filter?userId=" + currentUserId, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
