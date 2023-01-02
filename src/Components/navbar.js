@@ -6,12 +6,12 @@ import mainLogo from "../assets/14-removebg-preview.png";
 import userIcon from "../assets/userIcom.png";
 import { PostWithoutAuth } from "../services/HttpService";
 import { ChangeTrackerActivity } from "../services/HttpService";
-import { IsTracker, IsTrackerAvaliable } from "../services/userService";
+import { IsTrackerAvaliable } from "../services/userService";
 
 function Navbar() {
   const location = useLocation();
 
-  var showButtons = location.pathname !== "/";
+  var showButtons = location.pathname !== "/" || location.pathname !== "/register" || location.pathname !== "/login" ;
 
   const userTracker = localStorage.getItem("role") === "ROLE_TRACKER";
 
